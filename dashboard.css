@@ -223,7 +223,7 @@ input:checked + .slider:before {
 textarea {
   font-size: 15px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 50px;
 }
 
 .file {
