@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocali - Text to Speech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="switch.css">
+    <style>
+      section{
+        
+      }
+      .settings{
+          
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <header>
+      <div class = "row"></div>
+      <div class="menu">
+          <ul>
+            <li class = "dash" id="dash"><a  href="#"><i style="font-size:15px" class="fa">&#xf0e4;</i> Dashboard</a></li>
+            <li class = "acct" id="acct"><a href="#"><i style="font-size:15px" class="fa">&#xf007;</i> Account</a></li>
+            <li class = "cha" id="cha"><a href="#"><i style='font-size:15px' class='fas'>&#xf4ad;</i> Chat</a></li>
+            <li class = "voice" id="voice"><a href="#"><i style='font-size:15px' class='far'>&#xf144;</i>Voice & Video</a></li>
+            <li class = "app" id="app"><a href="#"><i style='font-size:15px' class='fas'>&#xf109;</i>
+               Appearance</a></li>
+            <li class = "not" id="not"><a href="#" ><i style="font-size:15px" class="fa">&#xf0f3;</i> Notification</a></li>
+            <li style="margin-top: 80%;">
+              <a href="" title="Logout">Logout 
+                <i class="fa fa-sign-out"></i>
+              </a>
+            </li>
+          </ul>
+      </div>
+
+      <section class =  "dashboard" id="dashboard">
+        <table>
+          <tr>
+              <td><h2>Dashboard</h2></td>
+          </tr>
+        </table>
+      </section>
+
+      <section class =  "account" id="account">
+        <table>
+          <tr>
+              <td><h2>Account</h2></td>
+          </tr>
+        </table>
+      </section>
+
+      <section class =  "chat" id="chat">
+        <table>
+          <tr>
+              <td><h2>Chat</h2></td>
+          </tr>
+        </table>
+      </section>
+
+      <section class = "settings" id="settings" >
+        <table>
+          <tr>
+              <td><h2>Voice Settings</h2></td>
+          </tr>
+          <tr>
+              <td><label>Input Device</label></td>
+          </tr>
+          <tr>
+              <td>
+                  <select name = "device" id = "device">
+                      <option>Default</option>
+                      <option>Device 1</option>
+                      <option>Device 2</option>
+                      <option>Device </option>
+                    </select>
+              </td>
+          </tr>
+          <tr>
+              <td><label for="volume">Input Device Volume</label></td>
+          </tr>
+          <tr>
+              <td><input type="range" id="speed" min="0.5" max="2" step="0.1" value="1" /></td>
+          </tr>
+  
+          <tr>
+              <td><label>Output Device</label></td>
+          </tr>
+          <tr>
+              <td>
+                  <select name = "device" id = "device">
+                      <option>Default</option>
+                      <option>Device 1</option>
+                      <option>Device 2</option>
+                      <option>Device </option>
+                    </select>
+              </td>
+          </tr>
+          <tr>
+              <td><label for="volume">Output Device Volume</label></td>
+          </tr>
+          <tr>
+              <td><input type="range" id="speed" min="0.5" max="2" step="0.1" value="1" /></td>
+          </tr>
+  
+          <tr>
+              <td>
+                  <label>MIC Test</label><br />
+                  Try to record and hear it. If you didn't hear anything, change your device or restart<br />
+                  <button class="btn">Record Voice</button>
+              </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px;"></td>
+        </tr>
+          <tr>
+              <td>
+                  <label>Input Sensitivity Automatically</label>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label><br />
+                  Let Nexus smooth your voice
+              </td>
+          </tr>
+        </table>        
+      </section>
+
+      <section class =  "appearance" id="appearance">
+        <table>
+          <tr>
+              <td><h2>Appearance</h2></td>
+          </tr>
+        </table>
+      </section>
+
+      <section class =  "notification" id="notification">
+        <table>
+          <tr>
+              <td><h2>Notification</h2></td>
+          </tr>
+        </table>
+      </section>
+
+      
+    </header>
+
+    
+    
+     
+  </body>
+</html>
