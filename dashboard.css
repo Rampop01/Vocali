@@ -13,7 +13,7 @@ body {
 /* Header Styles */
 .row {
   width: 100%;
-  background: #2196f3;
+  background: rgb(135, 206, 235);
   padding: 30px;
 }
 .menu {
@@ -104,7 +104,7 @@ table {
 }
 /* Change the link color on hover */
 li a:hover {
-  background-color: #2196f3;
+  background-color: rgb(135, 206, 235);
   color: white;
 }
 /* End of CSS for the Menu Navigation */
@@ -129,10 +129,10 @@ select {
 .btn {
   display: inline-block;
   padding: 15px 20px;
-  background-color: #2196f3;
+  background-color: rgb(135, 206, 235);
   color: #fff;
   border-radius: 25px;
-  border-color: #2196f3;
+  border-color: rgb(135, 206, 235);
   transition: background-color 0.3s ease;
 }
 
@@ -178,11 +178,11 @@ select {
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: rgb(135, 206, 235);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px rgb(135, 206, 235);
 }
 
 input:checked + .slider:before {
@@ -202,7 +202,7 @@ input:checked + .slider:before {
 /* End of CSS for the Slider Button */
 
 .dash {
-  background-color: #2196f3;
+  background-color: rgb(135, 206, 235);
 }
 
 .textarea-wrapper {
