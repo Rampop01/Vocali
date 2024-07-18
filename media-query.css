@@ -1,0 +1,113 @@
+@media (min-width: 576px) {
+  .text {
+    bottom: 120px;
+    width: 400px;
+  }
+  .logo {
+    width: 130px;
+    height: 130px;
+  }
+  .signin-button {
+    margin-right: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .signin-button,
+  .getstarted-button {
+    padding: 15px 25px;
+    font-size: 23px;
+  }
+  .landingpage p span {
+    font-size: 50px;
+  }
+  .text {
+    width: 600px;
+    font-size: 25px;
+  }
+  .features-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .signin-button,
+  .getstarted-button {
+    padding: 15px 25px;
+    font-size: 25px;
+  }
+  .signin-button {
+    margin-right: 35px;
+  }
+  .text {
+    bottom: 150px;
+    width: 700px;
+    font-size: 25px;
+  }
+  .landingpage p span {
+    font-size: 60px;
+  }
+  .about .about-image img {
+    width: 300px;
+    height: 300px;
+  }
+  .about-content {
+    flex-direction: row; /* Display image and text in a row */
+    align-items: flex-start; /* Align items to the top */
+    text-align: left; /* Align text to the left */
+  }
+
+  .about-image {
+    margin-right: 20px; /* Add space between image and text */
+    margin-left: 0; /* Reset left margin */
+  }
+
+  .about p {
+    margin-top: 0;
+    margin-left: 20px; /* Add space between image and text */
+  }
+  .about-content {
+    max-width: 100%; /* Adjust maximum width for larger screens */
+    padding: 0 10px; /* Adjust padding for larger screens */
+  }
+  .about {
+    text-align: center; /* Center-align text */
+    margin: 80px auto; /* Center the section horizontally */
+    max-width: 800px; /* Limit width to prevent text from spreading too wide */
+    padding: 0 10px; /* Add padding on the sides */
+    box-sizing: border-box;
+  }
+}
+
+/* --------about us--------- */
+
+@media (min-width: 1200px) {
+  .text {
+    bottom: 140px;
+  }
+  .signin-button,
+  .getstarted-button {
+    padding: 15px 25px;
+    font-size: 25px;
+  }
+  .logo {
+    width: 150px;
+    height: 150px;
+  }
+  .signin-button {
+    margin-right: 40px;
+  }
+  .about {
+    max-width: 1000px; /* Limit width to prevent text from spreading too wide */
+  }
+  .about .about-image img {
+    width: 350px;
+    height: 350px;
+  }
+  .about p {
+    text-align: center; /* Justify text for better readability */
+    margin-top: 90px;
+  }
+}
