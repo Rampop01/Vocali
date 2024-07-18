@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: rgb(251, 251, 251);
+}
+
+
+/* Header Styles */
+.row{
+    width: 100%;
+    background: #2196F3;
+    padding: 30px ;
+}
+.menu {
+    width: 20%;
+    height: 100%;
+    display: inline-flex;
+    background:;
+    padding: 10px;
+    font-size: 16px;
+}
+section{
+  display: inline-flex;
+}
+.dashboard{
+  width: 70%;
+  margin-top:10px ;
+  display: inline-flex;
+  /*display: inline-flex;*/
+  background-color: rgb(251, 251, 251) ;
+}
+.account{
+  width: 70%;
+  margin-top:10px ;
+  display: none;
+  /*display: inline-flex;*/
+  background-color: rgb(251, 251, 251) ;
+}
+.chat{
+  width: 70%;
+  margin-top:10px ;
+  display: none;
+  /*display: inline-flex;*/
+  background-color: rgb(251, 251, 251) ;
+}
+.settings{
+  width: 70%;
+  margin-top:10px ;
+  display: inline-flex;
+  /*display: inline-flex;*/
+  background-color: rgb(251, 251, 251) ;
+}
+.appearance{
+  width: 70%;
+  margin-top:10px ;
+  display: none;
+  /*display: inline-flex;*/
+  background-color: rgb(251, 251, 251) ;
+}
+.notification{
+  width: 70%;
+  margin-top:10px ;
+  display: none;
+  /*display: inline-flex;*/
+  background-color: rgb(251, 251, 251) ;
+}
+
+.settings td{
+    font-size: 16px;
+    padding: 5px;    
+}
+
+table{
+    width: 100%;
+}
+/* Start for CSS for the Menu Navigation */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+  
+  li a {
+    display: block;
+    color: #000000;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    /*border-bottom: 1px solid #555;*/
+  }
+  .active {
+    background-color: #475f7a;
+    color: black;
+  }
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #2196F3;
+    color: white;
+  }
+  /* End of CSS for the Menu Navigation */
+  input[type=range] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  label{
+    font-weight: bold;
+  }
+  select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+  }
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #2196F3;
+    color: #fff;
+    border-radius: 25px;
+    border-color: #2196F3;
+    transition: background-color 0.3s ease;
+}
+
+  /* Start for CSS for the Slider Button */
+  .switch {
+    float:right;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  /* End of CSS for the Slider Button */
