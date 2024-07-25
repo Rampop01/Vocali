@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">b
+<html lang="en">
+  b
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,18 +8,22 @@
     <link rel="stylesheet" href="./contact-us.css" />
     <script>
       function sendEmail() {
-  // Get form values
- // const to = document.getElementById('to').value;
-  const to = 'adedoyinadebayo7@gmail.com'
-  const subject = document.getElementById('subject').value;
-  const body = document.getElementById('message').value;
-  
-  // Construct the mailto link
-  const mailtoLink = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-  // Trigger the email client
-  window.location.href = mailtoLink;
-}
+        // Get form values
+        // const to = document.getElementById('to').value;
+        const to = "adedoyinadebayo7@gmail.com";
+        const subject = document.getElementById("subject").value;
+        const body = document.getElementById("message").value;
+
+        // Construct the mailto link
+        const mailtoLink = `mailto:${encodeURIComponent(
+          to
+        )}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+          body
+        )}`;
+
+        // Trigger the email client
+        window.location.href = mailtoLink;
+      }
     </script>
   </head>
   <body>
@@ -26,7 +31,7 @@
     <nav class="navbar">
       <img src="./Vocali logo.png" alt="logo" class="logo" />
       <ul class="nav-links">
-        <li><a class="homepage" href="./dashboard.html">Home</a></li>
+        <li><a class="homepage" href="./templates/dashboard.html">Home</a></li>
         <li><a href="./index.html" class="logout">Log out</a></li>
       </ul>
     </nav>
@@ -39,20 +44,16 @@
 
       <section class="contact-form">
         <form id="contactus">
-            
-
-
-           <!-- 
+          <!-- 
             <div class="form-group">
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required>
             </div>
           -->
-          
 
           <div class="form-group">
             <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required>
+            <input type="text" id="subject" name="subject" required />
           </div>
 
           <div class="form-group">
