@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url(images/IMG-20240718-WA0029\(0\).jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.remember{
+    position: relative;
+    width: 400px;
+    height: 420px;
+    background:white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-size: 2em;
+    color:black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box{
+    position: relative;
+    width:310px ;
+    margin: 30px 0;
+    /* border-bottom: 2px solid black; */
+    /* padding:16px; */
+}
+.box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    pointer-events: none;
+
+}
+.box input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    border-radius: 7px;
+    border: 2px solid black;
+    font-size: 1em;
+    /* color: #fff; */
+}
+.Forgot{
+    margin: 15px 0 15px;
+    font-size: .9em;
+    color: black;
+    list-style: none;
+}
+.Forgot a{
+    color:black;
+    text-decoration: none;
+}
+.Forgot a:hover {
+     text-decoration: underline;
+}
+ 
+button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    background: skyblue;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight:600;
+}
+button:hover{
+    color: white;
+}
+
+@media (max-width:360px) {
+    .box{
+        width: 200px;
+        /* height: 200px; */
+        /* padding: 30px 0; */
+        padding-bottom: 20px;
+        padding-top: 20px;
+    
+    }
+    .remember{
+        padding: 10px;
+        margin: 30px;
+    width: 300px;
+    height: 400px;
+    }
+    .box-input{
+        width: 200px;
+    }
+}

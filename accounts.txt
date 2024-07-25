@@ -1,0 +1,4 @@
+NAME, EMAIL, PASSWORD
+victor, victor@email.com, vic123
+edet, edet@manchi.bass, bassmatti
+
