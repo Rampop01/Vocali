@@ -6,36 +6,15 @@
     <title>Vocali - Text to Speech</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
     <link rel="stylesheet" href="switch.css" />
-
-    <script>
-      function speak() {
-        // Create a SpeechSynthesisUtterance
-        var speech = document.getElementById("text").value;
-        //print(speech);
-        const utterance = new SpeechSynthesisUtterance(speech);
-
-        // Select a voice
-        const voices = speechSynthesis.getVoices();
-        utterance.voice = voices[0]; // Choose a specific voice
-
-        // Speak the text
-        speechSynthesis.speak(utterance);
-      }
-    </script>
   </head>
-
   <body>
     <nav class="navbar">
       <img src="./Vocali logo.png" alt="logo" class="logo" />
@@ -44,153 +23,78 @@
         <li><a href="./index.html" class="logout">Log out</a></li>
       </ul>
     </nav>
-    <header>
-      <div class="menu">
+    <div class="container">
+      <aside class="menu">
         <ul class="list">
           <li class="dash" id="dash">
-            <a href="./dashboard.html"
-              ><i style="font-size: 15px" class="fa">&#xf0e4;</i> Dashboard</a
-            >
+            <a href="./dashboard.html"><i class="fa">&#xf0e4;</i> Dashboard</a>
           </li>
           <li class="acct" id="acct">
-            <a href="./settings.html"
-              ><i style="font-size: 15px" class="fa">&#xf007;</i> Settings</a
-            >
+            <a href="./settings.html"><i class="fa">&#xf007;</i> Settings</a>
           </li>
           <li class="cha" id="cha">
-            <a href="../faq.html"
-              ><i style="font-size: 15px" class="fas">&#xf4ad;</i> FAQ</a
-            >
+            <a href="./faq.html"><i class="fas">&#xf4ad;</i> FAQ</a>
           </li>
-          <!-- <li class="voice" id="voice">
-            <a href="#"
-              ><i style="font-size: 15px" class="far">&#xf144;</i>Voice</a
-            >
-          </li> -->
           <li class="app" id="app">
-            <a href="../contact-us.html"
-              ><i style="font-size: 15px" class="fas">&#xf109;</i> Contact Us</a
+            <a href="./contact-us.html"
+              ><i class="fas">&#xf109;</i> Contact Us</a
             >
           </li>
           <li class="not" id="not">
-            <a href="#"
-              ><i style="font-size: 15px" class="fa">&#xf0f3;</i>
-              Notification</a
-            >
+            <a href="#"><i class="fa">&#xf0f3;</i> Notification</a>
           </li>
-          <li style="margin-top: 65%">
-            <a href="../index.html" title="Logout"
-              >Logout
-              <i class="fa fa-sign-out"></i>
-            </a>
+          <li class="logout-item">
+            <a href="./index.html" title="Logout"
+              >Logout <i class="fa fa-sign-out"></i
+            ></a>
           </li>
         </ul>
-      </div>
-
-      <section class="dashboard" id="dashboard">
-        <div class="relative" style="width: 100%">
-          <table>
-            <tr>
-              <td>
-                <h2>Vocali</h2>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p style="text-align: center">
-                  Next Generation of AI Text Coverter
-                </p>
-              </td>
-            </tr>
-          </table>
+      </aside>
+      <main class="dashboard" id="dashboard">
+        <div class="content">
+          <h2>Vocali</h2>
+          <p>Next Generation of AI Text Converter</p>
+          <form action="/speak" method="post" enctype="multipart/form-data">
+            <div class="textarea-wrapper">
+              <textarea
+                id="text"
+                placeholder="Type in your text here..."
+                name="text"
+                cols="80"
+                rows="14"
+              ></textarea>
+              <div class="upload-btn-wrapper">
+                <span class="up-arrow">&#x1F809;</span><br />Upload a file
+                <input type="file" name="myfile" />
+              </div>
+            </div>
+            <div class="button-wrapper">
+              <button type="submit" class="btn">Speak</button>
+            </div>
+          </form>
+          <audio id="audio-player" controls>
+            <source src="" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
         </div>
-
-        <div class="fixed">
-          <table>
-            <!--tr>
-                
-                <th>
-                  <div class="upload-btn-wrapper">
-                    <i class="fa fa-upload" style="font-size:24px"></i>
-                    <i class="material-icons">&#xe2c6;</i>
-                    <input type="file" name="myfile" />
-                  </div>
-                </th>
-              </tr-->
-            <tr>
-              <td>
-                <div class="textarea-wrapper">
-                  <textarea
-                    id="text"
-                    placeholder="Type in your text here. . ."
-                    name="text"
-                    cols="80"
-                    rows="14"
-                  ></textarea>
-                  <!-- <span class="up-arrow">&#x1F809;</span> -->
-                  <!-- Up arrow Unicode character -->
-                </div>
-              </td>
-              <th>
-                <div class="upload-btn-wrapper">
-                  <span
-                    style="
-                      background-color: black;
-                      color: white;
-                      border-radius: 5px;
-                    "
-                    class="up-arrow"
-                    >&#x1F809;</span
-                  ><br />Upload a file
-                  <input type="file" name="myfile" />
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <audio controls style="width: 90%">
-                  <source src="horse.ogg" type="audio/ogg" />
-                  <source src="horse.mp3" type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button
-                  onclick="speak()"
-                  class="btn"
-                  style="
-                    width: 100px;
-                    padding: 10px 10px;
-                    background-color: #2196f3;
-                    color: #fff;
-                    border-radius: 25px;
-                    border-color: #2196f3;
-                  "
-                >
-                  Speak
-                </button>
-              </td>
-              <td style="text-align: right">
-                <button
-                  style="
-                    width: 100px;
-                    padding: 10px 10px;
-                    background-color: #2196f3;
-                    color: #fff;
-                    border-radius: 25px;
-                    border-color: #2196f3;
-                  "
-                  class="btn"
-                >
-                  Download
-                </button>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </section>
-    </header>
+      </main>
+    </div>
+    <script>
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        fetch("/speak", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.blob())
+          .then((blob) => {
+            const audioPlayer = document.getElementById("audio-player");
+            audioPlayer.src = URL.createObjectURL(blob);
+            audioPlayer.play();
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+    </script>
   </body>
 </html>
