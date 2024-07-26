@@ -4,7 +4,7 @@ email = input("Enter your email: ")
 password = input("Enter your password: ")
 
 # Read the accounts file
-with open("accounts.txt", 'r') as file:
+with open("accounts.txt", 'r') as file: 
     # Read the accounts line by line, and store them as strings
     accounts = [line.strip() for line in file.readlines()]
 
@@ -21,7 +21,9 @@ for account in accounts:
         existing_username, existing_email, existing_password = parts
         if (existing_username == name):
             print(f"FAILED: Account with username '" + name + "' already exist.")
+
             account_exist = True
+            
             break
 
         if (existing_email == email):
