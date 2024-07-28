@@ -6,31 +6,18 @@ body {
   background-color: whitesmoke;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  line-height: 1.6;
-  background-color: rgb(251, 251, 251);
-}
-
-
-.row {
+/* .row {
   width: 100%;
   background: rgb(135, 206, 235);
   padding: 30px;
 }
-
+ */
 
 .dashboard {
   width: 70%;
+  height: 100px;
   margin-top: 10px;
   display: inline-flex;
-  /*display: inline-flex;*/
   background-color: rgb(251, 251, 251);
 }
 
@@ -40,7 +27,7 @@ body {
   display: inline-flex;
 
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .menu ul {
@@ -170,7 +157,7 @@ h1 {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  color: skyblue;
+  color: royalblue;
 }
 
 #speech li label span{
