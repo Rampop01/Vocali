@@ -89,6 +89,9 @@ table {
   width: 100%;
   background-color: #f1f1f1;
 }
+aside{
+  min-height: 100%;
+}
 
 .list li a {
   display: block;

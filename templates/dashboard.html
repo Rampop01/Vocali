@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="../static/css/dashboard.css" />
     <link rel="stylesheet" href="switch.css" />
+    <link rel="stylesheet" href="../a.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -33,10 +34,10 @@
             <a href="./settings.html"><i class="fa">&#xf007;</i> Settings</a>
           </li>
           <li class="cha" id="cha">
-            <a href="./faq.html"><i class="fas">&#xf4ad;</i> FAQ</a>
+            <a href="../faq.html"><i class="fas">&#xf4ad;</i> FAQ</a>
           </li>
           <li class="app" id="app">
-            <a href="./contact-us.html"
+            <a href="../contact-us.html"
               ><i class="fas">&#xf109;</i> Contact Us</a
             >
           </li>
@@ -54,47 +55,35 @@
         <div class="content">
           <h2>Vocali</h2>
           <p>Next Generation of AI Text Converter</p>
-          <form action="/speak" method="post" enctype="multipart/form-data">
-            <div class="textarea-wrapper">
-              <textarea
-                id="text"
-                placeholder="Type in your text here..."
-                name="text"
-                cols="80"
-                rows="14"
-              ></textarea>
-              <div class="upload-btn-wrapper">
-                <span class="up-arrow">&#x1F809;</span><br />Upload a file
-                <input type="file" name="myfile" />
+            <div class="input-section">
+                <textarea id="text-input" placeholder="Enter text here..."></textarea>
+                <input type="file" id="upload-file" accept=".txt" />
+            </div>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="language-select">Language:</label>
+                    <select id="language-select">
+                        <option value="en-US">English (US)</option>
+                        <option value="en-GB">English (UK)</option>
+                        <option value="es-ES">Spanish (Spain)</option>
+                        <option value="fr-FR">French</option>
+                        <!-- Add more language options as needed -->
+                    </select>
+                </div>
+                <div class="control-group">
+                  <label for="speed-select">Speed:</label>
+                  <select id="speed-select">
+                      <option value="0.5">Slow</option>
+                      <option value="1">Normal</option>
+                      <option value="1.5">High</option>
+                  </select>
               </div>
+          </div>
+            <div class="action-buttons">
+                <button id="speak-btn">Speak</button>
+                <button id="download-btn">Download</button>
             </div>
-            <div class="button-wrapper">
-              <button type="submit" class="btn">Speak</button>
-            </div>
-          </form>
-          <audio id="audio-player" controls>
-            <source src="" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
         </div>
-      </main>
-    </div>
-    <script>
-      document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        fetch("/speak", {
-          method: "POST",
-          body: formData,
-        })
-          .then((response) => response.blob())
-          .then((blob) => {
-            const audioPlayer = document.getElementById("audio-player");
-            audioPlayer.src = URL.createObjectURL(blob);
-            audioPlayer.play();
-          })
-          .catch((error) => console.error("Error:", error));
-      });
-    </script>
+    
   </body>
 </html>
