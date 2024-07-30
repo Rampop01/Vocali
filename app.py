@@ -1,139 +1,45 @@
-# from flask import Flask, render_template, request
-# import pyttsx3
-
-# app = Flask(__name__)
-
-# input_device = 'default'
-# output_device = 'default'
-# input_volume = 0.5
-# output_volume = 0.5
-# voice_profile = 'female'
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# @app.route('/settings', methods=['GET', 'POST'])
-# def settings():
-#     global input_device, output_device, input_volume, output_volume, voice_profile
-
-#     if request.method == 'POST':
-#         input_device = request.form.get('input-device')
-#         output_device = request.form.get('output-device')
-#         input_volume = float(request.form.get('input-volume')) / 100
-#         output_volume = float(request.form.get('output-volume')) / 100
-#         voice_profile = request.form.get('voice-profile')
-
-#         apply_voice_settings()
-
-#     return render_template('settings.html')
-
-# @app.route('/speak')
-# def speak():
-#     text = request.args.get('text')
-#     if text:
-        
-#         engine = pyttsx3.init()
-#         apply_voice_settings(engine)  
-#         engine.say(text)
-#         engine.runAndWait()
-#         return 'Text spoken!'
-#     return 'No text provided'
-
-# def apply_voice_settings(engine=None):
-#     if engine is None:
-#         engine = pyttsx3.init()
-        
-#     voices = engine.getProperty('voices')
-#     if voice_profile == 'male':
-#         engine.setProperty('voice', voices[0].id)
-#     elif voice_profile == 'female':
-#         engine.setProperty('voice', voices[1].id)
-    
-#     engine.setProperty('volume', output_volume)
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-# from flask import Flask, render_template, request
-# import pyttsx3
-
-# app = Flask(__name__)
-
-# input_device = 'default'
-# output_device = 'default'
-# input_volume = 0.5
-# output_volume = 0.5
-# voice_profile = 'female'
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# @app.route('/settings', methods=['GET', 'POST'])
-# def settings():
-#     global input_device, output_device, input_volume, output_volume, voice_profile
-
-#     if request.method == 'POST':
-#         input_device = request.form.get('input-device')
-#         output_device = request.form.get('output-device')
-#         input_volume = float(request.form.get('input-volume')) / 100
-#         output_volume = float(request.form.get('output-volume')) / 100
-#         voice_profile = request.form.get('voice-profile')
-
-#         apply_voice_settings()
-
-#     return render_template('settings.html')
-
-# @app.route('/speak')
-# def speak():
-#     text = request.args.get('text')
-#     if text:
-        
-#         engine = pyttsx3.init()
-#         apply_voice_settings(engine)  
-#         engine.say(text)
-#         engine.runAndWait()
-#         return 'Text spoken!'
-#     return 'No text provided'
-
-# def apply_voice_settings(engine=None):
-#     if engine is None:
-#         engine = pyttsx3.init()
-        
-#     voices = engine.getProperty('voices')
-#     if voice_profile == 'male':
-#         engine.setProperty('voice', voices[0].id)
-#     elif voice_profile == 'female':
-#         engine.setProperty('voice', voices[1].id)
-    
-#     engine.setProperty('volume', output_volume)
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
-
-from flask import Flask, request, send_file, render_template
+from flask import Flask, render_template, request, send_from_directory
 from gtts import gTTS
-import io
+from werkzeug.utils import secure_filename  # For secure file handling
+import os
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'uploads'
+ALLOWED_EXTENSIONS = {'txt'} 
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-@app.route('/')
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('dashboard.html')
+    if request.method == 'POST':
+        text = request.form.get('text', '') # Get text from textarea
+        
+        # Handle file upload
+        if 'file' in request.files:
+            file = request.files['file']
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                file.save(filepath)
+                with open(filepath, 'r') as f:
+                    text += f.read()
 
-@app.route('/speak', methods=['POST'])
-def speak():
-    text = request.form.get('text')
-    if not text:
-        return "No text provided", 400
+        language = request.form['language']
+        speed = request.form['speed'] == 'slow'
 
-    tts = gTTS(text)
-    audio_file = io.BytesIO()
-    tts.write_to_fp(audio_file)
-    audio_file.seek(0)
-    
-    return send_file(audio_file, mimetype='audio/mpeg', as_attachment=True, download_name='speech.mp3')
+        tts = gTTS(text=text, lang=language, slow=speed)
+        audio_file = os.path.join(app.config['UPLOAD_FOLDER'], 'output.mp3')
+        tts.save(audio_file)
+
+        if 'action' in request.form and request.form['action'] == 'download': 
+            return send_from_directory(app.config['UPLOAD_FOLDER'], 'output.mp3', as_attachment=True)
+        else:
+            return send_from_directory(app.config['UPLOAD_FOLDER'], 'output.mp3') 
+
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
