@@ -6,26 +6,16 @@ body {
   background-color: whitesmoke;
 }
 
-/* .row {
-  width: 100%;
-  background: rgb(135, 206, 235);
-  padding: 30px;
-}
- */
-
 .dashboard {
-  width: 70%;
-  height: 100px;
+  width: 100%;
   margin-top: 10px;
-  display: inline-flex;
+  display: block;
   background-color: rgb(251, 251, 251);
 }
 
 .menu {
-  width: 20%;
-  height: 100%;
-  display: inline-flex;
-
+  width: 100%;
+  display: block;
   padding: 10px;
   font-size: 14px;
 }
@@ -33,110 +23,53 @@ body {
 .menu ul {
   list-style-type: none;
   margin: 0;
-  padding: 10px;
-  width: 100%;
+  padding: 0;
   background-color: #f1f1f1;
 }
 
-.account {
-  width: 70%;
-  margin-top: 10px;
-  display: none;
-
-  background-color: rgb(251, 251, 251);
-}
-
-.settings {
-  width: 70%;
-  margin-top: 10px;
-  display: inline-flex;
-
-  background-color: rgb(251, 251, 251);
-}
-
-.notification {
-  width: 70%;
-  margin-top: 10px;
-  display: none;
-
-  background-color: rgb(251, 251, 251);
-}
-
-.list li a {
-  display: block;
-  color: #000000;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-li a:hover {
-  background-color: rgb(135, 206, 235);
-  color: white;
-}
-
-.active {
-  background-color: #475f7a;
-  color: black;
-}
-
-/* header */
-
-nav ul .logout {
-  background-color: rgb(67, 157, 192);
-  padding: 5px 10px;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(135, 206, 235); /* Sky blue color */
-  padding: 5px 30px;
-}
-
-.logo {
-  width: 70px;
-  height: 70px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 50px;
+.menu ul li {
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  display: inline;
-}
-
-.nav-links a {
+.menu ul li a {
+  display: block;
+  color: #000000;
+  padding: 15px;
   text-decoration: none;
-  color: black;
-  font-weight: 600;
-  font-size: 1em;
+  font-size: 16px;
 }
 
-.nav-links a:hover {
+.menu ul li a:hover {
+  background-color: rgb(135, 206, 235);
   color: white;
-  text-decoration: underline;
+}
+
+.account,
+.settings,
+.notification {
+  width: 100%;
+  margin-top: 10px;
+  display: none;
+  background-color: rgb(251, 251, 251);
 }
 
 h1 {
   text-align: center;
+  font-size: 1.5em;
+  margin: 20px;
 }
 
 /* FAQ section */
 
 #speech {
-  width: 600px;
-  margin: 50px auto;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 10px;
 }
 
 #speech li {
   list-style: none;
-  width: 100%;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 4px;
@@ -147,7 +80,7 @@ h1 {
   padding: 10px;
   align-items: center;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   color: royalblue;
@@ -175,7 +108,7 @@ h1 {
   max-height: 400px;
 }
 
-/* footer section */
+/* Footer section */
 
 footer {
   background-color: skyblue;
@@ -183,4 +116,38 @@ footer {
   text-align: center;
   clear: both;
   width: 100%;
+}
+
+/* Media queries for larger screens */
+
+/* Tablets */
+@media (min-width: 768px) {
+  .menu {
+    width: 25%;
+    display: inline-flex;
+  }
+
+  .dashboard {
+    width: 75%;
+    display: inline-flex;
+  }
+
+  #speech {
+    width: 80%;
+  }
+}
+
+/* Desktops */
+@media (min-width: 992px) {
+  .menu {
+    width: 20%;
+  }
+
+  .dashboard {
+    width: 80%;
+  }
+
+  #speech {
+    width: 70%;
+  }
 }
