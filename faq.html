@@ -12,9 +12,9 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/css/dashboard.css" />
-    <link rel="stylesheet" href="switch.css" />
-    <link rel="stylesheet" href="./faq.css">
+    <link rel="stylesheet" href="./dashboard.css" />
+
+    <link rel="stylesheet" href="./faq.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -25,14 +25,12 @@
       </ul>
     </nav>
     <div class="container">
-      <aside style="min-height: 100vh;" class="menu">
+      <aside style="min-height: 100vh" class="menu">
         <ul class="list">
           <li class="acct" id="dash">
-            <a href="./templates/dashboard.html"><i class="fa">&#xf0e4;</i> Dashboard</a>
+            <a href="./dashboard.html"><i class="fa">&#xf0e4;</i> Dashboard</a>
           </li>
-          <li class="cas" id="acct">
-            <a href="./settings.html"><i class="fa">&#xf007;</i> Settings</a>
-          </li>
+
           <li class="dash" id="cha">
             <a href="./faq.html"><i class="fas">&#xf4ad;</i> FAQ</a>
           </li>
@@ -53,89 +51,93 @@
       </aside>
       <main class="dashboard" id="dashboard">
         <div class="content">
-          <!-- paste your code here -->
-
           <h1>Frequently Asked Questions</h1>
-    
 
           <ul id="speech">
             <li>
-              <label for="quest1">What is the Text to Speech System? <span>&#x3e;</span></label>
-              <input type="radio" name="faq" id="quest1">
+              <label for="quest1"
+                >What is the Text to Speech System? <span>&#x3e;</span></label
+              >
+              <input type="radio" name="faq" id="quest1" />
               <div class="answers">
-                <p>A revolutionary assistive technology that converts written text
-                  into spoken words, helping individuals with reading difficulties.</p>
+                <p>
+                  A revolutionary assistive technology that converts written
+                  text into spoken words, helping individuals with reading
+                  difficulties.
+                </p>
               </div>
             </li>
-    
+
             <li>
               <label for="quest2">How does it work?<span>&#x3e;</span></label>
-              <input type="radio" name="faq" id="quest2" checked>
+              <input type="radio" name="faq" id="quest2" checked />
               <div class="answers">
-                <p>Our system uses advanced algorithms and machine learning to
-                  synthesize natural-sounding speech from text inputs.</p>
+                <p>
+                  Our system uses advanced algorithms and machine learning to
+                  synthesize natural-sounding speech from text inputs.
+                </p>
               </div>
             </li>
-    
+
             <li>
-              <label for="quest3">How do I use the system?<span>&#x3e;</span></label>
-              <input type="radio" name="faq" id="quest3">
+              <label for="quest3"
+                >How do I use the system?<span>&#x3e;</span></label
+              >
+              <input type="radio" name="faq" id="quest3" />
               <div class="answers">
-                <p> Simply type or paste your text into the input field and click the
-                  "Speak" button to hear the audio output.</p>
+                <p>
+                  Simply type or paste your text into the input field and click
+                  the "Speak" button to hear the audio output.
+                </p>
               </div>
             </li>
-    
+
             <li>
-              <label for="quest4">Can I customize the voice and pitch?<span>&#x3e;</span></label>
-              <input type="radio" name="faq" id="quest4">
+              <label for="quest4"
+                >Can I customize the voice and pitch?<span>&#x3e;</span></label
+              >
+              <input type="radio" name="faq" id="quest4" />
               <div class="answers">
-                <p>Yes, our system offers a range of voices and pitch options to suit
-                  your preferences.</p>
+                <p>
+                  Yes, our system offers a range of voices and pitch options to
+                  suit your preferences.
+                </p>
               </div>
             </li>
-    
-            
+
             <li>
-              <label for="quest5">What devices are compatible with the system?<span>&#x3e;</span></label>
-              <input type="radio" name="faq" id="quest5">
+              <label for="quest5"
+                >What devices are compatible with the system?<span
+                  >&#x3e;</span
+                ></label
+              >
+              <input type="radio" name="faq" id="quest5" />
               <div class="answers">
-                <p>Our system is accessible on desktops, laptops, tablets, and
-                  smartphones with internet connectivity.</p>
+                <p>
+                  Our system is accessible on desktops, laptops, tablets, and
+                  smartphones with internet connectivity.
+                </p>
               </div>
             </li>
-    
+
             <li>
-              <label for="quest6">How do I troubleshoot technical issues?<span>&#x3e;</span></label>
-              <input type="radio" name="faq" id="quest6">
+              <label for="quest6"
+                >How do I troubleshoot technical issues?<span
+                  >&#x3e;</span
+                ></label
+              >
+              <input type="radio" name="faq" id="quest6" />
               <div class="answers">
-                <p>Contact our support team at
-                  [support@email.com](mailto:support@email.com) for assistance with
-                  any technical difficulties.</p>
+                <p>
+                  Contact our support team at
+                  [support@email.com](mailto:support@email.com) for assistance
+                  with any technical difficulties.
+                </p>
               </div>
             </li>
           </ul>
-     
-          
-                </div>
+        </div>
       </main>
     </div>
-    <script>
-      document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        fetch("/speak", {
-          method: "POST",
-          body: formData,
-        })
-          .then((response) => response.blob())
-          .then((blob) => {
-            const audioPlayer = document.getElementById("audio-player");
-            audioPlayer.src = URL.createObjectURL(blob);
-            audioPlayer.play();
-          })
-          .catch((error) => console.error("Error:", error));
-      });
-    </script>
   </body>
 </html>

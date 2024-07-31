@@ -12,32 +12,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+
     <link rel="stylesheet" href="./dashboard.css" />
     <link rel="stylesheet" href="./contact-us.css" />
 
-
     <link rel="stylesheet" href="switch.css" />
-
-
-    <script>
-      function speak() {
-        // Create a SpeechSynthesisUtterance
-        var speech = document.getElementById("text").value;
-        //print(speech);
-        const utterance = new SpeechSynthesisUtterance(speech);
-
-        // Select a voice
-        const voices = speechSynthesis.getVoices();
-        utterance.voice = voices[0]; // Choose a specific voice
-
-        // Speak the text
-        speechSynthesis.speak(utterance);
-      }
-    </script>
   </head>
 
   <body>
@@ -56,21 +35,13 @@
               ><i style="font-size: 15px" class="fa">&#xf0e4;</i> Dashboard</a
             >
           </li>
-          <li class="acct" id="acct">
-            <a href="./settings.html"
-              ><i style="font-size: 15px" class="fa">&#xf007;</i> Settings</a
-            >
-          </li>
+
           <li class="cha" id="cha">
             <a href="./faq.html"
               ><i style="font-size: 15px" class="fas">&#xf4ad;</i> FAQ</a
             >
           </li>
-          <!-- <li class="voice" id="voice">
-            <a href="#"
-              ><i style="font-size: 15px" class="far">&#xf144;</i>Voice</a
-            >
-          </li> -->
+
           <li class="app" id="app">
             <a href="./contact-us.html"
               ><i style="font-size: 15px" class="fas">&#xf109;</i> Contact Us</a
@@ -108,32 +79,24 @@
             </tr>
           </table>
           <form id="contactus">
-            
+            <div class="form-group">
+              <label for="subject">Subject:</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
 
-
-            <!-- 
-             <div class="form-group">
-               <label for="email">Email:</label>
-               <input type="email" id="email" name="email" required>
-             </div>
-           -->
-           
- 
-           <div class="form-group">
-             <label for="subject">Subject:</label>
-             <input type="text" id="subject" name="subject" required>
-           </div>
- 
-           <div class="form-group">
-             <label for="message">Message:</label>
-             <textarea id="message" name="message" rows="5" required></textarea>
-           </div>
-           <button onclick="sendEmail()" class="btn" style="width: 20%;">Submit</button>
-         </form>
-
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button class="btn" style="width: 20%">Submit</button>
+          </form>
         </div>
-
-              </section>
+      </section>
     </header>
   </body>
 </html>

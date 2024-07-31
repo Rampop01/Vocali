@@ -38,12 +38,11 @@ body {
   background-color: #f1f1f1;
 }
 
-
 .account {
   width: 70%;
   margin-top: 10px;
   display: none;
-  /*display: inline-flex;*/
+
   background-color: rgb(251, 251, 251);
 }
 
@@ -51,7 +50,7 @@ body {
   width: 70%;
   margin-top: 10px;
   display: inline-flex;
-  /*display: inline-flex;*/
+
   background-color: rgb(251, 251, 251);
 }
 
@@ -59,7 +58,7 @@ body {
   width: 70%;
   margin-top: 10px;
   display: none;
-  /*display: inline-flex;*/
+
   background-color: rgb(251, 251, 251);
 }
 
@@ -69,7 +68,6 @@ body {
   padding: 15px 20px;
   text-decoration: none;
   font-size: 18px;
-  /*border-bottom: 1px solid #555;*/
 }
 
 li a:hover {
@@ -81,11 +79,6 @@ li a:hover {
   background-color: #475f7a;
   color: black;
 }
-
-.dash {
-  background-color: rgb(135, 206, 235);
-}
-
 
 /* header */
 
@@ -136,12 +129,12 @@ h1 {
 
 /* FAQ section */
 
-#speech{
+#speech {
   width: 600px;
   margin: 50px auto;
 }
 
-#speech li{
+#speech li {
   list-style: none;
   width: 100%;
   margin-bottom: 10px;
@@ -149,7 +142,7 @@ h1 {
   border-radius: 4px;
 }
 
-#speech li label{
+#speech li label {
   display: flex;
   padding: 10px;
   align-items: center;
@@ -160,17 +153,17 @@ h1 {
   color: royalblue;
 }
 
-#speech li label span{
+#speech li label span {
   transform: rotate(90deg);
   font-size: 15px;
   color: #333;
 }
 
-#speech label + input[type="radio"]{
+#speech label + input[type="radio"] {
   display: none;
 }
 
-#speech .answers{
+#speech .answers {
   padding: 0 10px;
   line-height: 25px;
   max-height: 0;
@@ -178,7 +171,7 @@ h1 {
   transition: max-height 0.5s;
 }
 
-#speech label + input[type="radio"]:checked + .answers{
+#speech label + input[type="radio"]:checked + .answers {
   max-height: 400px;
 }
 

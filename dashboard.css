@@ -10,12 +10,6 @@ body {
   background-color: rgb(251, 251, 251);
 }
 
-/* Header Styles */
-.row {
-  width: 100%;
-  background: rgb(135, 206, 235);
-  padding: 30px;
-}
 .menu {
   width: 20%;
   height: 100%;
@@ -24,63 +18,15 @@ body {
   padding: 10px;
   font-size: 16px;
 }
-section {
-  display: inline-flex;
-}
+
 .dashboard {
   width: 70%;
-  margin-top: 10px;
+
   display: inline-flex;
-  /*display: inline-flex;*/
-  background-color: rgb(251, 251, 251);
-}
-.account {
-  width: 70%;
-  margin-top: 10px;
-  display: none;
-  /*display: inline-flex;*/
-  background-color: rgb(251, 251, 251);
-}
-.chat {
-  width: 70%;
-  margin-top: 10px;
-  display: none;
-  /*display: inline-flex;*/
-  background-color: rgb(251, 251, 251);
-}
-.settings {
-  width: 70%;
-  margin-top: 10px;
-  display: inline-flex;
-  /*display: inline-flex;*/
-  background-color: rgb(251, 251, 251);
-}
-.appearance {
-  width: 70%;
-  margin-top: 10px;
-  display: none;
-  /*display: inline-flex;*/
-  background-color: rgb(251, 251, 251);
-}
-.notification {
-  width: 70%;
-  margin-top: 10px;
-  display: none;
-  /*display: inline-flex;*/
+
   background-color: rgb(251, 251, 251);
 }
 
-.settings td {
-  font-size: 16px;
-  padding: 5px;
-}
-td h2 {
-  text-align: center;
-}
-
-table {
-  width: 100%;
-}
 /* Start for CSS for the Menu Navigation */
 .menu ul {
   list-style-type: none;
@@ -89,7 +35,7 @@ table {
   width: 100%;
   background-color: #f1f1f1;
 }
-aside{
+aside {
   min-height: 100%;
 }
 
@@ -99,114 +45,14 @@ aside{
   padding: 15px 20px;
   text-decoration: none;
   font-size: 18px;
-  /*border-bottom: 1px solid #555;*/
 }
-.active {
-  background-color: #475f7a;
-  color: black;
-}
+
 /* Change the link color on hover */
 li a:hover {
   background-color: rgb(135, 206, 235);
   color: white;
 }
 /* End of CSS for the Menu Navigation */
-input[type="range"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-label {
-  font-weight: bold;
-}
-select {
-  width: 100%;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #f1f1f1;
-}
-
-/* Button */
-.btn {
-  display: inline-block;
-  padding: 15px 20px;
-  background-color: rgb(135, 206, 235);
-  color: #fff;
-  border-radius: 25px;
-  border-color: rgb(135, 206, 235);
-  transition: background-color 0.3s ease;
-}
-
-/* Start for CSS for the Slider Button */
-.switch {
-  /* float: right; */
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: rgb(135, 206, 235);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px rgb(135, 206, 235);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-/* End of CSS for the Slider Button */
-
-.dash {
-  background-color: rgb(135, 206, 235);
-}
 
 .textarea-wrapper {
   position: relative;
@@ -215,57 +61,13 @@ input:checked + .slider:before {
 .textarea-wrapper textarea {
   padding-right: 30px; /* Space for the icon */
 }
-.textarea-wrapper .up-arrow {
-  position: absolute;
-  top: 15px;
-  right: 5px;
-  cursor: pointer;
-  background-color: antiquewhite;
-  border-radius: 5px;
-}
+
 textarea {
   font-size: 15px;
   border-radius: 20px;
   padding: 10px;
-  width: 900px;
-}
-
-.file {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #3498db;
-  color: #fff;
-  border-radius: 5px;
-  height: 40px;
-}
-td {
-  padding: 15px;
-}
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-.btn {
-  border: 2px solid gray;
-  color: gray;
-  background-color: rgb(229, 227, 218);
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
-  width: 100%;
-}
-
-.upload-btn-wrapper input[type="file"] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  width: 100%;
+  /* width: 100px; */
+  height: 200px;
 }
 
 div.relative {
@@ -320,4 +122,200 @@ nav ul .logout {
 .nav-links a:hover {
   color: white;
   text-decoration: underline;
+}
+*/
+/* new styles from inside html */
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+nav {
+  background-color: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+main {
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.options > div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.options > div:last-child {
+  margin-right: 0;
+}
+
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+button {
+  margin-right: 30px;
+}
+button:hover {
+  background-color: #2980b9;
+}
+
+#audio-player {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .options {
+    flex-direction: column;
+  }
+
+  .options > div {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
+.text-input-area {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: calc(100%);
+  margin-right: 15px;
+}
+
+.upload-button:hover {
+  background-color: #2980b9;
+}
+
+#file-upload {
+  cursor: pointer;
+}
+
+footer {
+  background-color: #3498db;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.actions a {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+.actions a:hover {
+  background-color: #2980b9;
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocali - AI Text Converter</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../dashboard.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="./Vocali logo.png" alt="logo" class="logo" />
+      <ul class="nav-links">
+        <li><a class="homepage" href="./dashboard.html">Home</a></li>
+        <li><a href="./index.html" class="logout">Log out</a></li>
+      </ul>
+    </nav>
+    <header>
+      <div class="menu">
+        <ul class="list">
+          <li class="dash" id="dash">
+            <a href="./dashboard.html"
+              ><i style="font-size: 15px" class="fa">&#xf0e4;</i> Dashboard</a
+            >
+          </li>
+
+          <li class="cha" id="cha">
+            <a href="./faq.html"
+              ><i style="font-size: 15px" class="fas">&#xf4ad;</i> FAQ</a
+            >
+          </li>
+
+          <li class="app" id="app">
+            <a href="../contact-us.html"
+              ><i style="font-size: 15px" class="fas">&#xf109;</i> Contact Us</a
+            >
+          </li>
+          <li class="not" id="not">
+            <a href="#"
+              ><i style="font-size: 15px" class="fa">&#xf0f3;</i>
+              Notification</a
+            >
+          </li>
+          <li style="margin-top: 65%">
+            <a href="./index.html" title="Logout"
+              >Logout
+              <i class="fa fa-sign-out"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <main class="dashboard" id="dashboard">
+        <div class="container">
+          <div class="card">
+            <div class="actions">
+              <a href="./dist/text_to_speech.exe">Download Application</a>
+              <a href="" target="_blank">Watch Live Demo</a>
+            </div>
+            <form method="POST" id="text-form" enctype="multipart/form-data">
+              <div class="text-input-area">
+                <textarea
+                  name="text"
+                  placeholder="Enter your text here..."
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="options">
+                <div>
+                  <label for="language">Language:</label>
+                  <select name="language" id="language">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="ja">Japanese</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="speed">Speed:</label>
+                  <select name="speed" id="speed">
+                    <option value="normal">Normal</option>
+                    <option value="slow">Slow</option>
+                    <option value="fast">Fast</option>
+                  </select>
+                </div>
+              </div>
+              <audio id="audio-player" controls></audio>
+
+              <button type="submit" class="button">Speak</button>
+              <label for="file-upload" class="button">Upload File</label>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+          <p>© 2024 Vocali. All rights reserved.</p>
+        </div>
+      </footer>
+    </header>
+  </body>
+</html>
