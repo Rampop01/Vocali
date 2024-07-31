@@ -1,176 +1,82 @@
+/* Reset and basic styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: "Lato", sans-serif;
   line-height: 1.6;
   background-color: rgb(251, 251, 251);
+  display: flex;
+  flex-direction: column;
 }
 
-.menu {
-  width: 20%;
-  height: 100%;
-  display: inline-flex;
-
-  padding: 10px;
-  font-size: 16px;
+main {
+  flex: 1; /* This ensures the main content area takes up the remaining space */
 }
 
-.dashboard {
-  width: 70%;
-
-  display: inline-flex;
-
-  background-color: rgb(251, 251, 251);
-}
-
-/* Start for CSS for the Menu Navigation */
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-  width: 100%;
-  background-color: #f1f1f1;
-}
-aside {
-  min-height: 100%;
-}
-
-.list li a {
-  display: block;
-  color: #000000;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-/* Change the link color on hover */
-li a:hover {
-  background-color: rgb(135, 206, 235);
-  color: white;
-}
-/* End of CSS for the Menu Navigation */
-
-.textarea-wrapper {
-  position: relative;
-  display: inline-block;
-}
-.textarea-wrapper textarea {
-  padding-right: 30px; /* Space for the icon */
-}
-
-textarea {
-  font-size: 15px;
-  border-radius: 20px;
-  padding: 10px;
-  /* width: 100px; */
-  height: 200px;
-}
-
-div.relative {
-  position: relative;
-  width: 50%;
-  bottom: 5px;
-}
-div.fixed {
-  background-color: rgb(251, 251, 251);
-  position: fixed;
-
-  bottom: 10px;
-}
-/* header */
-
-nav ul .logout {
-  background-color: rgb(67, 157, 192);
-  padding: 5px 10px;
-}
+/* Navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(135, 206, 235);
-  padding: 5px 30px;
+  padding: 10px 20px;
 }
 
 .logo {
-  width: 70px;
-  height: 70px;
+  width: 50px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 50px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  display: inline;
+  gap: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: black;
   font-weight: 600;
-  font-size: 1em;
 }
 
 .nav-links a:hover {
   color: white;
-  text-decoration: underline;
-}
-*/
-/* new styles from inside html */
-
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: #3498db;
+/* Menu styles */
+.menu {
+  width: 100%;
+  background-color: #f1f1f1;
 }
 
-nav {
-  background-color: white;
+.menu ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.list li a {
+  display: block;
+  color: #000;
   padding: 15px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.list li a:hover {
+  background-color: rgb(135, 206, 235);
+  color: white;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-links ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.nav-links li {
-  margin-left: 30px;
-}
-
-main {
-  padding: 40px 20px;
+/* Main content styles */
+.dashboard {
+  padding: 20px;
 }
 
 .container {
@@ -178,51 +84,38 @@ main {
   margin: 0 auto;
 }
 
-h1 {
-  text-align: center;
-  color: #3498db;
-  margin-bottom: 30px;
-}
-
 .card {
   background-color: white;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
 }
 
-textarea {
+.text-input-area textarea {
+  width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  resize: vertical;
   margin-bottom: 15px;
 }
 
 .options {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.options > div {
-  flex: 1;
-  margin-right: 10px;
+.options div {
+  width: 100%;
 }
 
-.options > div:last-child {
-  margin-right: 0;
-}
-
-select,
-input[type="file"] {
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 .button {
@@ -235,10 +128,8 @@ input[type="file"] {
   font-size: 16px;
   transition: background-color 0.3s;
 }
-button {
-  margin-right: 30px;
-}
-button:hover {
+
+.button:hover {
   background-color: #2980b9;
 }
 
@@ -247,53 +138,7 @@ button:hover {
   margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-  .options {
-    flex-direction: column;
-  }
-
-  .options > div {
-    margin-bottom: 10px;
-    width: 100%;
-  }
-
-  .navbar-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-links {
-    margin-top: 10px;
-  }
-
-  .nav-links ul {
-    flex-direction: column;
-  }
-
-  .nav-links li {
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-}
-.text-input-area {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 15px;
-}
-
-textarea {
-  width: calc(100%);
-  margin-right: 15px;
-}
-
-.upload-button:hover {
-  background-color: #2980b9;
-}
-
-#file-upload {
-  cursor: pointer;
-}
-
+/* Footer styles */
 footer {
   background-color: #3498db;
   color: white;
@@ -301,21 +146,70 @@ footer {
   text-align: center;
 }
 
+/* Ensure footer is always at the bottom */
 footer .container {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .actions a {
   background-color: #3498db;
   color: white;
-  padding: 10px 10px;
-  margin-bottom: 20px;
+  padding: 10px;
   border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
 }
-.actions {
-  display: flex;
-  justify-content: space-between;
-}
+
 .actions a:hover {
   background-color: #2980b9;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 10px 30px;
+  }
+
+  .nav-links {
+    gap: 50px;
+  }
+
+  .menu {
+    width: 20%;
+    float: left;
+    height: 100vh;
+    position: fixed;
+  }
+
+  .dashboard {
+    width: 80%;
+    float: right;
+    padding: 40px;
+  }
+
+  .options {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .options div {
+    width: calc(50% - 10px);
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .actions a {
+    width: 48%;
+  }
 }
