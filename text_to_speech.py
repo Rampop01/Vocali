@@ -83,7 +83,7 @@ def get_language():
         language = language_codes.get(chosen_language.capitalize())
         
         if language is None:
-            print(f"The language '{chosen_language}' is not supported.")
+            print(f"The language is not supported.")
         else:
             return chosen_language, language
 
